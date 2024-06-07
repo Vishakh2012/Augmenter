@@ -2,4 +2,4 @@
 .venv/
 pyrightconfig.json
 **/__pycache__/
-.env_directory/
+env_directory/
