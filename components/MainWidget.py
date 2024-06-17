@@ -1,7 +1,7 @@
 from PyQt5.QtWidgets import QPushButton, QWidget, QHBoxLayout
 from components import SidePanel, WorkPanel
 from components.Tabs import RotateTab
-
+from components.Tabs import BlurTab
 class MainWidget(QWidget):
     """
     This class takes multiple arguments and adds them to the current layout.
@@ -20,12 +20,15 @@ class MainWidget(QWidget):
         """
         Initialize widgets used in the main layout.
         """
-        self.work_panel = self.right_widget(RotateTab())
+        self.work_panel = self.right_widget(RotateTab(), BlurTab())
         
         self.btn1 = QPushButton("Button 1", self)
         self.btn2 = QPushButton("Button 2", self)
         self.btn3 = QPushButton("Button 3", self)
         self.btn4 = QPushButton("Button 4", self)
+
+        self.btn1.clicked.connect(self.selectRotationTab)
+        self.btn2.clicked.connect(self.selectBlurTab)
         
         self.side_panel = self.left_widget(self.btn1, self.btn2, self.btn3, self.btn4)
 
@@ -40,4 +43,16 @@ class MainWidget(QWidget):
         main_layout.setStretch(1, 200)
 
         self.setLayout(main_layout)
+
+    def change_page(self, index):
+        """
+        Change the page in the right panel.
+        """
+        self.work_panel.setCurrentIndex(index)
+
+    def selectRotationTab(self):
+        self.change_page(0)
+
+    def selectBlurTab(self):
+        self.change_page(1)
 
