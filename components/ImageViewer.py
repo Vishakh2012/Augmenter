@@ -21,7 +21,7 @@ class ImageSelector(QWidget):
         layout.addWidget(self.button)
         
 
-    getFileName = lambda self: self.file_name
+    get_file_name = lambda self: self.file_name
     def select_image(self):
         options = QFileDialog.Options()
         options |= QFileDialog.DontUseNativeDialog
