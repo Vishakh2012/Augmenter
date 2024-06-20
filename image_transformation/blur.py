@@ -80,7 +80,7 @@ class Blur():
                 blurred_images.append(self.bilateral_blur(image_path))
             elif blur == 'motion':
                 blurred_images.append(self.motion_blur(image_path))
-            elif blur == 'mean_shift':
+            elif blur == 'mean shift':
                 blurred_images.append(self.mean_shift_blur(image_path))
         return blurred_images 
 
@@ -95,3 +95,9 @@ class Blur():
         for i in range(len(image_path)):
             blurred_images.append(self.apply_selected_blurs_on_single_image(image_path[i], selected_blurs))
         return blurred_images
+
+    def  get_all_blurs(self) -> list:
+        ''' returns a list of all blurs
+        '''
+        return ['gaussian', 'median', 'average', 'bilateral', 'motion', 'mean shift']
+
