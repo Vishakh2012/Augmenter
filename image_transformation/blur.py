@@ -93,7 +93,7 @@ class Blur():
 
         image_path = file_interaction().get_file_path_within_directory(directory_path)
         for i in range(len(image_path)):
-            blurred_images.append(self.apply_selected_blurs_on_single_image(image_path[i], selected_blurs))
+            blurred_images.extend(self.apply_selected_blurs_on_single_image(image_path[i], selected_blurs))
         return blurred_images
 
     def  get_all_blurs(self) -> list:

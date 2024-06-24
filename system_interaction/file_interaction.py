@@ -4,13 +4,15 @@ import cv2
 import uuid
 class file_interaction:
 
-    def save_image(self,path: str,image: MatLike, transormation_name: str) -> bool:
+    def save_image(self,path: str,image, transormation_name: str) -> bool:
         ''' arguments : path : str : path of the image
                         image : MatLike : image to be saved
             returns a boolean value
         '''
         unique_file_name = self._create_unique_path_for_transformed_file(path, transormation_name)
         print(unique_file_name)
+        print(type(image))
+
         file_saved = cv2.imwrite(unique_file_name, image)
 
 
@@ -37,8 +39,10 @@ class file_interaction:
             file_saved = self.save_image(path, image, transformation_name)
 
             if not file_saved:
+                print("file not save")
                 return False
-
+        
+        print("file saved")
         return True
     
     def get_file_path_within_directory(self,directory_path: str) -> list:
@@ -50,7 +54,7 @@ class file_interaction:
         for entry in os.listdir(directory_path):
             full_path = os.path.join(directory_path, entry)
             file_paths.append(full_path)
-
+        print(file_paths)
         return file_paths
 
 

@@ -35,4 +35,4 @@ class ImageSelector(QWidget):
             self.label.setScaledContents(False)
 
         
-
+    
