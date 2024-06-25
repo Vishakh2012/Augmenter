@@ -30,8 +30,8 @@ class DirectorySelector(QWidget):
         
         self.btn2 = QPushButton("Select Directory for augmented images")
         self.btn2.clicked.connect(self.open_output_dialog_box)
-        self.setLayout(vbox)
         vbox.addWidget(self.btn2)
+        self.setLayout(vbox)
 
 
     def open_input_dialog_box(self):

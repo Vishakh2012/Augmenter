@@ -3,10 +3,11 @@ from components import directoryselector
 from system_interaction import file_interaction
 from image_transformation import Blur 
 class BlurTab(QWidget):
+ 
     def __init__(self):
         super().__init__()
         main_layout = QVBoxLayout()
-        main_layout.addWidget(QLabel('blur'))
+        main_layout.addWidget(QLabel('BLUR'))
         self.blur_backend = Blur()
         self.directory_selector = directoryselector.DirectorySelector(self.blur_backend.get_all_blurs())
         main_layout.addWidget(self.directory_selector)
@@ -25,6 +26,7 @@ class BlurTab(QWidget):
             print("blur image type")
             print(type(blurred_images[0]))
             output_directory = self.directory_selector.get_output_directory()
+            print(output_directory)
 
             if output_directory:
                 file_interaction().save_multiple_images(output_directory, blurred_images, 'blur')

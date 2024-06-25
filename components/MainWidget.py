@@ -22,10 +22,10 @@ class MainWidget(QWidget):
         """
         self.work_panel = self.right_widget(RotateTab(), BlurTab())
         
-        self.btn1 = QPushButton("Button 1", self)
-        self.btn2 = QPushButton("Button 2", self)
-        self.btn3 = QPushButton("Button 3", self)
-        self.btn4 = QPushButton("Button 4", self)
+        self.btn1 = QPushButton("Rotation", self)
+        self.btn2 = QPushButton("Blur", self)
+        self.btn3 = QPushButton("Pooling", self)
+        self.btn4 = QPushButton("Contrast", self)
 
         self.btn1.clicked.connect(self.selectRotationTab)
         self.btn2.clicked.connect(self.selectBlurTab)

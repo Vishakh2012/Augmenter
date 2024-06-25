@@ -4,7 +4,7 @@ import cv2
 import uuid
 class file_interaction:
 
-    def save_image(self,path: str,image, transormation_name: str) -> bool:
+    def save_image(self, path: str,image, transormation_name: str) -> bool:
         ''' arguments : path : str : path of the image
                         image : MatLike : image to be saved
             returns a boolean value
@@ -25,7 +25,7 @@ class file_interaction:
             uses uuid to generate unique file in the base directory
 
         '''
-        unique_file_name = directory_path + "_" + transformation_name + "_" + str(uuid.uuid4()) + "." + image_format
+        unique_file_name = directory_path + "/" + transformation_name + "_" + str(uuid.uuid4()) + "." + image_format
 
         return unique_file_name
 
