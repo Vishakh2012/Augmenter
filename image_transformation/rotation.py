@@ -37,7 +37,7 @@ class Rotation:
 
         image_path = file_interaction().get_file_path_within_directory(directory_path)
         for i in range(len(image_path)):
-            rotated_images.append(self.apply_selected_rotation_on_single_image(image_path[i], selected_angles))
+            rotated_images.extend(self.apply_selected_rotation_on_single_image(image_path[i], selected_angles))
         return rotated_images
 
     def get_all_rotations(self) -> list:
